@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historial de Tareas</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <div class="dashboard">
+        <button onclick="window.location.href='dashboard.html';">Ir a Cargar Tarea</button>
+        <h2>Historial de Tareas</h2>
+        <div class="filter">
+            <label for="tablero-filter">Filtrar por Tablero:</label>
+            <select id="tablero" name="tablero" required>
+                <option value="" disabled selected>Seleccione un tablero o estación</option>
+                <optgroup label="Tableros Gral. Paz (Acc Norte - La Noria)">
+                    <option value="TI 1400">TI 1400</option>
+                    <option value="TI 1300">TI 1300</option>
+                    <option value="TI 1200">TI 1200</option>
+                    <option value="TI 1100">TI 1100</option>
+                    <option value="TI 1000">TI 1000</option>
+                    <option value="TI 900">TI 900</option>
+                    <option value="TI Camara 2">Tablero Cámara 2</option>
+                    <option value="TI Camara 1">Tablero Cámara 1</option>
+                    <option value="TI 800">TI 800</option>
+                    <option value="TI 700">TI 700</option>
+                    <option value="TI 600">TI 600</option>
+                    <option value="TI 500">TI 500</option>
+                    <option value="TI 400">TI 400</option>
+                    <option value="TI 300">TI 300</option>
+                    <option value="TI 47 provincias unidas">TI 47 Provincias Unidas</option>
+                    <option value="TI 200">TI 200</option>
+                    <option value="TI 100">TI 100</option>
+                    <option value="TI Tuyuti">Tuyuti</option>
+                    <option value="TI Ibarrola">Ibarrola</option>
+                    <option value="TI Amadeo Jacques">Amadeo Jacques</option>
+                    <option value="TI Madrid">Madrid</option>
+                    <option value="TI San Cayetano">San Cayetano</option>
+                    <option value="TI J.J Paso">J. J. Paso</option>
+                    <option value="TI San Ignacio">San Ignacio</option>
+                    <option value="TI Croacia">Croacia</option>
+                    <option value="TI 1 Nazarre">TI 1 Nazarre</option>
+                    <option value="TI 2 Varela">TI 2 Varela</option>
+                    <option value="TI 3 Cortina">TI 3 Cortina</option>
+                    <option value="TI 4 Moliere">TI 4 Moliere</option>
+                    <option value="TI 5 Calderón de la Barca">TI 5 Calderón de la Barca</option>
+                    <option value="TI 6 Lastra">TI 6 Lastra</option>
+                    <option value="TI 7 Vallejos">TI 7 Vallejos</option>
+                    <option value="TI 8 Lincoln">TI 8 Lincoln</option>
+                    <option value="TI 9 Griveo">TI 9 Griveo</option>
+                    <option value="TI 10 San Martín">TI 10 San Martín</option>
+                    <option value="TI 11 Emilio Lamarca">TI 11 Emilio Lamarca</option>
+                    <option value="TI 12 Campana">TI 12 Campana</option>
+                    <option value="TI 13 Ezeiza">TI 13 Ezeiza</option>
+                    <option value="TI 14 Barrio General">TI 14 Barrio General</option>
+                    <option value="TI 45 Constituyentes">TI 45 Constituyentes</option>
+                    <option value="TI 15 Parque Saavedra">TI 15 Parque Saavedra</option>
+                    <option value="TI 16 Parque Sarmiento">TI 16 Parque Sarmiento</option>
+                    <option value="TI 17 Parque Saavedra 2">TI 17 Parque Saavedra 2</option>
+                    <option value="TI 18 Lima">TI 18 Lima</option>
+                    <option value="TI 19 Tejar">TI 19 Tejar</option>
+                    <option value="TI 20 Lugones">TI 20 Lugones</option>
+                    <option value="TI 22 Echeverría">TI 22 Echeverría</option>
+                </optgroup>
+                <optgroup label="Estaciones de Peaje">
+                    <option value="Peaje Debenedetti Asc">Peaje Debenedetti Asc</option>
+                    <option value="Peaje Belgrano Asc">Peaje Belgrano Asc</option>
+                    <option value="Peaje Debenedetti Desc">Peaje Debenedetti Desc</option>
+                    <option value="Peaje Márquez Asc">Peaje Márquez Asc</option>
+                    <option value="Peaje Márquez Desc">Peaje Márquez Desc</option>
+                    <option value="Peaje Tigre Troncal">Peaje Tigre Troncal</option>
+                    <option value="Peaje Cap. Juan de San Martín Asc">Peaje Cap. Juan de San Martín Asc</option>
+                    <option value="Peaje Cap. Juan de San Martín Desc">Peaje Cap. Juan de San Martín Desc</option>
+                    <option value="Peaje Camino Real Asc">Peaje Camino Real Asc</option>
+                    <option value="Peaje Camino Real Desc">Peaje Camino Real Desc</option>
+                    <option value="Peaje Buen Aire Asc">Peaje Buen Aire Asc</option>
+                    <option value="Peaje Buen Aire Decalado Desc">Peaje Buen Aire Decalado Desc</option>
+                    <option value="Peaje Buen Aire Desc">Peaje Buen Aire Desc</option>
+                    <option value="Peaje 202 Decalado Asc">Peaje 202 Decalado Asc</option>
+                    <option value="Peaje 202 Asc">Peaje 202 Asc</option>
+                    <option value="Peaje 202 Decalado Desc">Peaje 202 Decalado Desc</option>
+                    <option value="Peaje 202 Desc">Peaje 202 Desc</option>
+                    <option value="Peaje Belgrano Desc">Peaje Belgrano Desc</option>
+                    <option value="Peaje 197 Asc">Peaje 197 Asc</option>
+                    <option value="Peaje 197 Desc">Peaje 197 Desc</option>
+                    <option value="Peaje Campana Troncal">Peaje Campana Troncal</option>
+                    <option value="Peaje Pilar Troncal">Peaje Pilar Troncal</option>
+                    <option value="Peaje Pilar Decalado">Peaje Pilar Decalado</option>
+                    <option value="Peaje Campana Decalado">Peaje Campana Decalado</option>
+                </optgroup>
+                
+                    
+                    <optgroup label="Tableros Gral. Paz Lugones">
+                        <option value="Tableros Gral. Paz Lugones">Tableros Gral. Paz Lugones</option>
+                        <option value="Ti 40 Superi">Ti 40 Superi</option>
+                        <option value="Ti 41 Zapiola">Ti 41 Zapiola</option>
+                        <option value="Ti 40.1 Superi 1">Ti 40.1 Superi 1</option>
+                        <option value="Ti 42 Cabildo">Ti 42 Cabildo</option>
+                        <option value="Tab Grecia">Tab Grecia</option>
+                        <option value="Ti 43 11 de septiembre">Ti 43 11 de septiembre</option>
+                    </optgroup>
+                    
+                    <optgroup label="Tableros de acceso norte gral paz- marquez">
+                        <option value="Tableros de acceso norte gral paz- marquez">Tableros de acceso norte gral paz- marquez</option>
+                        <option value="TAN 01 Venezuela">TAN 01 Venezuela</option>
+                        <option value="Ti 23 Haedo">Ti 23 Haedo</option>
+                        <option value="Ti 24 Arenales">Ti 24 Arenales</option>
+                        <option value="Ti 25 Villate">Ti 25 Villate</option>
+                        <option value="Ti 26 Pelliza">Ti 26 Pelliza</option>
+                        <option value="Tab Bermudez">Tab Bermudez</option>
+                        <option value="Ti 28 Parana">Ti 28 Parana</option>
+                        <option value="Ti 29 Velez">Ti 29 Velez</option>
+                        <option value="Ti 30 Cuyo">Ti 30 Cuyo</option>
+                        <option value="Ti 31 Wilde">Ti 31 Wilde</option>
+                    </optgroup>
+                    
+                    <optgroup label="Tableros Acceso Norte Marquez-Bifurcacion">
+                        <option value="Tableros Acceso Norte Marquez-Bifurcacion">Tableros Acceso Norte Marquez-Bifurcacion</option>
+                        <option value="TI 34 Marquez I">TI 34 Marquez I</option>
+                        <option value="TI 35 Marquez II">TI 35 Marquez II</option>
+                        <option value="TI 32 Rolon I">TI 32 Rolon I</option>
+                        <option value="TI 33 Rolon II">TI 33 Rolon II</option>
+                        <option value="Tab Sucre">Tab Sucre</option>
+                    </optgroup>
+                    
+                    <optgroup label="Tableros Ramal Campana">
+                        <option value="Tableros Ramal Campana">Tableros Ramal Campana</option>
+                        <option value="TC02 Gutierrez">TC02 Gutierrez</option>
+                        <option value="TC03 Henry Ford">TC03 Henry Ford</option>
+                        <option value="TC04 Constituyentes">TC04 Constituyentes</option>
+                        <option value="TC05 Ferrocarril mitre">TC05 Ferrocarril mitre</option>
+                        <option value="TC06 Alvear">TC06 Alvear</option>
+                        <option value="TC07 Fidel Lopez">TC07 Fidel Lopez</option>
+                        <option value="TC08 Chilabert">TC08 Chilabert</option>
+                        <option value="TC09 Vedia">TC09 Vedia</option>
+                        <option value="TC10 Ruta 9">TC10 Ruta 9</option>
+                        <option value="TC11 La bota">TC11 La bota</option>
+                        <option value="TC12 Saavedra">TC12 Saavedra</option>
+                        <option value="TC13 Maswicht">TC13 Maswicht</option>
+                        <option value="TC14 Maipu">TC14 Maipu</option>
+                        <option value="TC15 Avellaneda">TC15 Avellaneda</option>
+                        <option value="TC16 A.C.A">TC16 A.C.A</option>
+                        <option value="TC17 Horacio">TC17 Horacio</option>
+                        <option value="TC18 Aranjuez">TC18 Aranjuez</option>
+                        <option value="TC18.1 El Canton">TC18.1 El Canton</option>
+                        <option value="TC19 Aranjuez II">TC19 Aranjuez II</option>
+                        <option value="TC20 Septiembre">TC20 Septiembre</option>
+                        <option value="TC21 Mario">TC21 Mario</option>
+                        <option value="TC22 Martin Fierro">TC22 Martin Fierro</option>
+                        <option value="TC23 Distribuidor escobar I">TC23 Distribuidor escobar I</option>
+                        <option value="TC24 Distribuidor escobar II">TC24 Distribuidor escobar II</option>
+                        <option value="TC25 Cruz">TC25 Cruz</option>
+                        <option value="TC26 Lazaristas">TC26 Lazaristas</option>
+                        <option value="TC27 Dragui">TC27 Dragui</option>
+                        <option value="TC28 La Tranquita">TC28 La Tranquita</option>
+                        <option value="TC29 Pecuen">TC29 Pecuen</option>
+                        <option value="TC30 Fleni">TC30 Fleni</option>
+                        <option value="TC31 Shell">TC31 Shell</option>
+                        <option value="TC32 Loma Verde">TC32 Loma Verde</option>
+                        <option value="TC33 Loma Verde II">TC33 Loma Verde II</option>
+                        <option value="TC34 Luis">TC34 Luis</option>
+                        <option value="TC35 Daniel">TC35 Daniel</option>
+                        <option value="TC36 Transporte">TC36 Transporte</option>
+                        <option value="TC37 David">TC37 David</option>
+                        <option value="TC38 Cristian">TC38 Cristian</option>
+                        <option value="TC39 Rio Lujan">TC39 Rio Lujan</option>
+                        <option value="TC40 Rio Lujan II">TC40 Rio Lujan II</option>
+                        <option value="TC41 Camping">TC41 Camping</option>
+                        <option value="TC42 Los Cardales">TC42 Los Cardales</option>
+                        <option value="TC43 Gabriel">TC43 Gabriel</option>
+                        <option value="TC44 Fernando">TC44 Fernando</option>
+                        <option value="TC45 Arroyo Pescado">TC45 Arroyo Pescado</option>
+                        <option value="TC46 Hugo">TC46 Hugo</option>
+                        <option value="TC47 Diego">TC47 Diego</option>
+                        <option value="TC48 Marcelo">TC48 Marcelo</option>
+                        <option value="TC49 La Lucila">TC49 La Lucila</option>
+                        <option value="TC50 Matias">TC50 Matias</option>
+                        <option value="TC51 Otamendi">TC51 Otamendi</option>
+                        <option value="TC52 San Jacinto">TC52 San Jacinto</option>
+                        <option value="TC53 Blanco">TC53 Blanco</option>
+                        <option value="TC54 Parque Industrial">TC54 Parque Industrial</option>
+                        <option value="TC55 El Tanque">TC55 El Tanque</option>
+                        <option value="TC56 Ariel del Plata">TC56 Ariel del Plata</option>
+                        <option value="TC57 Barrio Siderca">TC57 Barrio Siderca</option>
+                        <option value="TC58 Campana">TC58 Campana</option>
+                    </optgroup>
+                    
+                    <optgroup label="Tableros de Pilar">
+                        <option value="Tableros de Pilar">Tableros de Pilar</option>
+                        <option value="Tp02 Carnot">Tp02 Carnot</option>
+                        <option value="Tp 04 Eifel">Tp 04 Eifel</option>
+                        <option value="Tp 05 Olivos">Tp 05 Olivos</option>
+                        <option value="Tp 06 Constituyentes">Tp 06 Constituyentes</option>
+                        <option value="Tp 6.1 Patricios">Tp 6.1 Patricios</option>
+                        <option value="Tp 07 Santa Rosa">Tp 07 Santa Rosa</option>
+                        <option value="Tp 7.1 Lugones">Tp 7.1 Lugones</option>
+                        <option value="Tp 08 Junin Golf">Tp 08 Junin Golf</option>
+                        <option value="Tp 8.1 Tortuguitas">Tp 8.1 Tortuguitas</option>
+                        <option value="Tp 09 Ruta 26">Tp 09 Ruta 26</option>
+                        <option value="Tp 10 Las Camelias">Tp 10 Las Camelias</option>
+                        <option value="Tp 11 Oliden">Tp 11 Oliden</option>
+                        <option value="Tp 12 De la Torre">Tp 12 De la Torre</option>
+                        <option value="Tp 13 Florida">Tp 13 Florida</option>
+                    </optgroup>
+
+                    <optgroup  label="Tableros de Tigre">
+                        <option value="TT1 Blanco encalada">TT1 Blanco Encalada</option>
+                        <option value="TT2 Tomkinson">TT2 Tomkinson</option>
+                        <option value="TT3 Guido">TT3 Guido</option>
+                        <option value="TT4 Uruguay">TT4 Uruguay</option>
+                        <option value="TT5 Carlos Casares">TT5 Carlos Casares</option>
+                        <option value="TT6 Avellaneda">TT6 Avellaneda</option>
+                        <option value="TT7 Ruta 202">TT7 Ruta 202</option>
+                        <option value="TT8 Shell">TT8 Shell</option>
+                        <option value="TT9 Carupá">TT9 Carupá</option>
+                        <option value="TT10">TT10</option>
+                        <option value="TT11 Tigre joven">TT11 Tigre Joven</option>
+                        <option value="TT12">TT12</option>
+                        <option value="TT13">TT13</option>
+                    </optgroup>
+                    
+                
+            </select>
+            
+        </div>
+        <div class="task-history">
+            <table id="task-table">
+                <thead>
+                    <tr>
+                        <th>Tablero</th>
+                        <th>Descripción</th>
+                        <th>Zona</th>
+                        <th>Materiales</th>
+                        <th>Técnicos</th>
+                        <th>Fecha</th>
+                        <th>Hora de Inicio</th>
+                        <th>Hora de Fin</th>
+                        <th>Estado</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Tareas dinámicas aquí -->
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div id="success-alert" class="alert-container">
+        <span>Tarea actualizada con éxito</span>
+        <button onclick="hideAlert()">✖</button>
+    </div>
+    
+
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', async function () {
+            let tasks = [];
+            try {
+                const response = await fetch('/api/tasks');
+                if (!response.ok) throw new Error('Error al obtener las tareas');
+                tasks = await response.json();
+                displayTasks(tasks);
+            } catch (error) {
+                console.error('Error al cargar tareas:', error);
+                alert('Error al cargar tareas.');
+            }
+        
+            document.getElementById('tablero-filter').addEventListener('change', function () {
+                const selectedTablero = this.value;
+                const filteredTasks = selectedTablero
+                    ? tasks.filter(task => task.tablero === selectedTablero)
+                    : tasks;
+                displayTasks(filteredTasks);
+            });
+        
+            function displayTasks(filteredTasks) {
+                const taskTableBody = document.querySelector('#task-table tbody');
+                taskTableBody.innerHTML = '';
+                filteredTasks.forEach(task => {
+                    const row = document.createElement('tr');
+                    row.innerHTML = `
+                        <td>${task.tablero}</td>
+                        <td>${task.descripcion}</td>
+                        <td>${task.zona}</td>
+                        <td>${task.materiales}</td>
+                        <td>${task.tecnicos}</td>
+                        <td>${task.fecha}</td>
+                        <td>${task.hora_inicio}</td>
+                        <td>${task.hora_fin}</td>
+                        <td>${task.estado}</td>
+                        <td>
+                            <button onclick="deleteTask('${task.tablero}')">Eliminar</button>
+                            <button onclick="promptUpdateTask('${task.id_tarea}')">Actualizar</button>
+                        </td>
+                    `;
+                    taskTableBody.appendChild(row);
+                });
+            }
+        });
+        
+        async function deleteTask(tablero) {
+            try {
+                const response = await fetch(`/api/tasks/${tablero}`, { method: 'DELETE' });
+                if (response.ok) {
+                    alert('Tarea eliminada');
+                    window.location.reload();
+                } else {
+                    alert('Error al eliminar tarea');
+                }
+            } catch (error) {
+                alert('Hubo un problema con la solicitud');
+            }
+        }
+        
+        function promptUpdateTask(id_tarea) {
+            const tablero = prompt('Nuevo tablero:') || undefined;
+            const descripcion = prompt('Nueva descripción:') || undefined;
+            const estado = prompt('Nuevo estado:') || undefined;
+            const zona = prompt('Nueva zona:') || undefined;
+            const fecha = prompt('Nueva fecha (YYYY-MM-DD):') || undefined;
+            const hora_inicio = prompt('Nueva hora de inicio (HH:MM):') || undefined;
+            const hora_fin = prompt('Nueva hora de fin (HH:MM):') || undefined;
+            const tecnicos = prompt('Nuevos técnicos (separados por comas):') || undefined;
+            const materiales = prompt('Nuevos materiales (separados por comas):') || undefined;
+        
+            const updates = {
+                tablero,
+                descripcion,
+                estado,
+                zona,
+                fecha,
+                hora_inicio,
+                hora_fin,
+                tecnicos,
+                materiales
+            };
+        
+            // Filtrar los campos que están definidos
+            const filteredUpdates = Object.fromEntries(
+                Object.entries(updates).filter(([_, value]) => value !== undefined)
+            );
+        
+            if (Object.keys(filteredUpdates).length > 0) {
+                updateTask(id_tarea, filteredUpdates);
+            } else {
+                alert('No se ingresaron datos válidos para actualizar.');
+            }
+        }
+        
+        async function updateTask(id_tarea, updates) {
+            try {
+                const response = await fetch(`/api/tasks/${id_tarea}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(updates),
+                });
+        
+                if (response.ok) {
+                    const updatedTask = await response.json(); // Obtén la respuesta del servidor con los datos actualizados
+                    updateTaskInDOM(id_tarea, updatedTask); // Actualiza los datos en el DOM
+                    showAlert(); // Muestra la alerta de éxito
+                } else {
+                    alert('Error al actualizar la tarea');
+                }
+            } catch (error) {
+                alert('Hubo un problema con la solicitud');
+            }
+        }
+        function updateTaskInDOM(id_tarea, updatedTask) {
+            // Encuentra el contenedor de la tarea por su ID
+            const taskElement = document.querySelector(`#task-${id_tarea}`);
+            
+            if (taskElement) {
+                // Actualiza los campos específicos en el DOM
+                taskElement.querySelector('.tablero').textContent = updatedTask.tablero;
+                taskElement.querySelector('.descripcion').textContent = updatedTask.descripcion;
+                taskElement.querySelector('.estado').textContent = updatedTask.estado;
+                taskElement.querySelector('.zona').textContent = updatedTask.zona;
+                taskElement.querySelector('.fecha').textContent = updatedTask.fecha;
+                taskElement.querySelector('.hora-inicio').textContent = updatedTask.hora_inicio;
+                taskElement.querySelector('.hora-fin').textContent = updatedTask.hora_fin;
+                taskElement.querySelector('.tecnicos').textContent = updatedTask.tecnicos.join(', ');
+                taskElement.querySelector('.materiales').textContent = updatedTask.materiales.join(', ');
+        
+                // Agregar una animación o transición opcional para resaltar la tarea actualizada
+                taskElement.classList.add('updated');
+                setTimeout(() => taskElement.classList.remove('updated'), 2000);
+            }
+        }
+        function showAlert() {
+            const alertBox = document.getElementById('success-alert');
+            alertBox.style.opacity = '1'; // Hacer visible
+            alertBox.classList.add('show');
+            setTimeout(() => hideAlert(), 3000); // Ocultar después de 3 segundos
+        }
+        
+        function hideAlert() {
+            const alertBox = document.getElementById('success-alert');
+            alertBox.style.opacity = '0'; // Suaviza la transición
+            setTimeout(() => alertBox.classList.remove('show'), 300);
+        }
+                        
+    </script>
+</body>
+
+</html>
