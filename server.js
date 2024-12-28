@@ -1,6 +1,6 @@
 
 
-import { app, BrowserWindow, ipcMain } from 'electron';
+//import { app, BrowserWindow, ipcMain } from 'electron';
 import path from 'path';
 import { join } from 'path';
 import express from 'express';
@@ -242,7 +242,7 @@ server.listen(port, () => {
 });
 
 // Configuración de Electron
-let mainWindow;
+/*let mainWindow;
 function createWindow() {
     mainWindow = new BrowserWindow({
         width: 800,
@@ -271,3 +271,4 @@ ipcMain.handle('get-tasks', async () => await getAllTasks());
 ipcMain.handle('add-task', async (event, task) => await addTask(task));
 ipcMain.handle('update-task', async (event, id, estado) => await updateTask(id, estado));
 ipcMain.handle('delete-task', async (event, id) => await deleteTask(id));
+*/
