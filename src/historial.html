@@ -255,10 +255,13 @@
 
 
     <script>
+        const APP_API_URL = 'https://https://apptareaselec.onrender.com';
+
         document.addEventListener('DOMContentLoaded', async function () {
             let tasks = [];
             try {
-                const response = await fetch('/api/tasks');
+               // const response = await fetch('/api/tasks');
+               const response = await fetch(`${APP_API_URL}/api/tasks`);
                 if (!response.ok) throw new Error('Error al obtener las tareas');
                 tasks = await response.json();
                 displayTasks(tasks);
@@ -302,7 +305,8 @@
         
         async function deleteTask(tablero) {
             try {
-                const response = await fetch(`/api/tasks/${tablero}`, { method: 'DELETE' });
+             //   const response = await fetch(`/api/tasks/${tablero}`, { method: 'DELETE' });
+             const response = await fetch(`${APP_API_URL}/api/tasks/${tablero}`, { method: 'DELETE' });
                 if (response.ok) {
                     alert('Tarea eliminada');
                     window.location.reload();
@@ -351,7 +355,8 @@
         
         async function updateTask(id_tarea, updates) {
             try {
-                const response = await fetch(`/api/tasks/${id_tarea}`, {
+               // const response = await fetch(`/api/tasks/${id_tarea}`, {
+                const response = await fetch(`${APP_API_URL}/api/tasks/${id_tarea}`, {
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json',

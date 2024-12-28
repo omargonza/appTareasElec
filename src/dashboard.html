@@ -228,7 +228,7 @@
                     <option value="TT12">TT12</option>
                     <option value="TT13">TT13</option>
                 </optgroup>
-                
+
             </select>
 
 
@@ -272,10 +272,15 @@
 
 
     <script>
+
+        const APP_API_URL = '{{process.env.APP_API_URL}}'; // Renderiza esto en el servidor   
+
         document.addEventListener('DOMContentLoaded', function () {
             async function loadTasks() {
                 try {
-                    const response = await fetch('http://localhost:3000/api/tasks');
+                    //       const response = await fetch('http://localhost:3000/api/tasks');
+                    const response = await fetch(`${process.env.APP_API_URL}/api/tasks`);
+
                     const tasks = await response.json();
 
                     const taskTableBody = document.querySelector('#task-table tbody');
@@ -313,7 +318,11 @@
                 const newTask = Object.fromEntries(formData.entries());
 
                 try {
-                    const response = await fetch('http://localhost:3000/api/tasks', {
+                    //   const response = await fetch('http://localhost:3000/api/tasks',
+                    const response = await fetch(`${process.env.APP_API_URL}/api/tasks`, {
+
+
+
                         method: 'POST',
                         headers: { 'Content-Type': 'application/json' },
                         body: JSON.stringify(newTask)
@@ -334,7 +343,8 @@
 
             window.deleteTask = async function (id_tarea) {
                 try {
-                    const response = await fetch(`http://localhost:3000/api/tasks/${id_tarea}`, {
+                    // const response = await fetch(`http://localhost:3000/api/tasks/${id_tarea}`, {
+                    const response = await fetch(`http://${process.env.APP_API_URL}/${id_tarea}`, {
                         method: 'DELETE'
                     });
 
