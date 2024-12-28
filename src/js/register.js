@@ -18,12 +18,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
         console.log('Datos del usuario a enviar:', user);
          // Definir la URL base desde una variable o constante
-         const BASE_API_URL = `${process.env.APP_API_URL || 'https://tuurlproduccion.com'}`;
+         const API_URL =  'https://apptareaselec.onrender.com';
 
 
         try {
            // const response = await fetch('http://localhost:3000/api/register', {
-            const response = await fetch(`${BASE_API_URL}/api/register`, {
+            const response = await fetch(`${API_URL}/api/register`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(user)
