@@ -34,6 +34,8 @@ server.use(bodyParser.json());
 
 // Servir archivos estáticos
 server.use(express.static(join(__dirname, 'src')));
+server.use(express.static('public'));
+
 
 const SECRET_KEY = process.env.SECRET_KEY;
 
