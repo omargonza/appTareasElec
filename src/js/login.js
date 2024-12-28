@@ -1,5 +1,6 @@
 // src/js/login.js
 
+
 document.getElementById('login-form').addEventListener('submit', async (e) => {
     e.preventDefault();
 
@@ -12,9 +13,16 @@ document.getElementById('login-form').addEventListener('submit', async (e) => {
     }
 
     const user = { username, password };
+    // Definir la URL base desde una variable o constante
+    const BASE_API_URL = `${process.env.APP_API_URL || 'https://apptareaselec.onrender.com'}`;
+
+       
 
     try {
-        const response = await fetch('http://localhost:3000/api/login', {
+        
+       //const response = await fetch('http://localhost:3000/api/login', {
+        const response = await fetch(`${BASE_API_URL}/api/login`, {
+      
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(user)
