@@ -45,3 +45,5 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 });
 
+console.log('Estado del servidor:', response.status);
+console.log('Respuesta:', await response.text());
