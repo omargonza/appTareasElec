@@ -12,10 +12,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
         const user = { username, password };
 
-        const API_URL = 'https://apptareaselec.onrender.com';
+
+   
+        const API_API_URL = process.env.API_URL
 
         try {
-            const response = await fetch(`${API_URL}/api/login`, {
+            const response = await fetch(`${API_API_URL}/api/login`, {
                 method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify(user),
