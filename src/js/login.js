@@ -1,8 +1,3 @@
-// src/js/login.js
-console.log(document.getElementById('login-form'));
-console.log(document.getElementById('username'));
-console.log(document.getElementById('password'));
-
 document.addEventListener('DOMContentLoaded', () => {
     document.getElementById('login-form').addEventListener('submit', async (e) => {
         e.preventDefault();
@@ -26,6 +21,9 @@ document.addEventListener('DOMContentLoaded', () => {
                 body: JSON.stringify(user),
             });
 
+            console.log('Estado del servidor:', response.status);
+            console.log('Respuesta:', await response.text());
+
             if (!response.ok) {
                 throw new Error('Error en la respuesta del servidor');
             }
@@ -44,6 +42,3 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
-
-console.log('Estado del servidor:', response.status);
-console.log('Respuesta:', await response.text());
