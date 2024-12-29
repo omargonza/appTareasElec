@@ -11,6 +11,7 @@ import bcrypt from 'bcrypt';
 import jwt from 'jsonwebtoken';
 import bodyParser from 'body-parser';
 
+import morgan from 'morgan';
 
 import dotenv from 'dotenv';
 dotenv.config();
@@ -35,6 +36,8 @@ server.use(bodyParser.json());
 // Servir archivos estáticos
 server.use(express.static(join(__dirname, 'src')));
 server.use(express.static('public'));
+
+server.use(morgan('dev')); // Esto te ayudará a registrar las solicitudes y respuestas
 
 
 const SECRET_KEY = process.env.SECRET_KEY;
