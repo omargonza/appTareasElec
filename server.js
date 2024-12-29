@@ -34,7 +34,7 @@ const __dirname = path.dirname(__filename);
 server.use(cors());
 server.use(bodyParser.json());
 server.use(express.json());
-server.use(express.static(join(__dirname, 'public')));
+server.use(express.static(join(__dirname, 'src')));
 server.use(morgan('dev'));
 
 // Clave secreta para JWT
@@ -88,6 +88,10 @@ server.post('/api/login', async (req, res) => {
         console.error(err);
         res.status(500).json({ error: 'Error al iniciar sesión' });
     }
+});
+
+server.get('/', (req, res) => {
+    res.sendFile(path.join(__dirname, 'src', 'index.html'));
 });
 
 // Ruta: Obtener todas las tareas
