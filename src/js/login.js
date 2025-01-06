@@ -25,7 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const user = { username, password };
         console.log('Datos enviados al servidor:', user); // Muestra el objeto que será enviado
 
-        const API_URL = 'https://apptareaselec.onrender.com';
+        const API_URL =  process.env.API_URL;
         console.log('URL del API:', API_URL); // Confirma la URL usada en la solicitud
 
         try {
