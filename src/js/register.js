@@ -21,8 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
         console.log('Datos del usuario a enviar:', user);
 
         // Definir la URL base desde una constante
-      //  const API_URL = 'https://apptareaselec.onrender.com';
-      //  console.log('URL de la API:', API_URL);  // Para verificar que se pasa correctamente
+        const API_URL = 'https://apptareaselec.onrender.com';
+        console.log('URL de la API:', API_URL);  // Para verificar que se pasa correctamente
 
         try {
             // Enviar la solicitud al servidor con el método POST
