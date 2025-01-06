@@ -73,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
         const user = { username, password };
         console.log('Datos enviados al servidor:', user); // Muestra el objeto que será enviado
 
-        const API_URL = 'https://apptareaselec.onrender.com';
-        console.log('URL del API:', API_URL); // Confirma la URL usada en la solicitud
+      //  const API_URL = 'https://apptareaselec.onrender.com';
+       // console.log('URL del API:', API_URL); // Confirma la URL usada en la solicitud
 
         try {
             const response = await fetch(`${API_URL}/api/login`, {
