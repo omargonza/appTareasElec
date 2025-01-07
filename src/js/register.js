@@ -1,3 +1,5 @@
+import dotenv from 'dotenv';
+dotenv.config();
 
 document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('register-form').addEventListener('submit', async (e) => {
